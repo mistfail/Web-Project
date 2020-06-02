@@ -2,9 +2,304 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <link REL="SHORTCUT ICON" href="efre.png">
     <title>Le meilleur Projet Web</title>
+
+    <style>
+        body{
+            background-color: #2a2a2a;
+        }
+        *{
+            margin: 0; padding: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        .sticky{
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+        }
+        nav{
+            display: flex;
+            line-height: 60px;
+            background: linear-gradient(#021a25 50%, #04212e 50%);
+            width: 100%;
+            height: 60px;
+            padding: 0 15px;
+            font-size: 18px;
+            list-style-type: none;
+            overflow: hidden;
+        }
+        nav .team{
+            color: #f0f0f0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 8px;
+        }
+        nav ul{display: flex;}
+
+        nav ul .item a{
+            cursor: pointer;
+            color: #dbdbdb;
+            transition: all .2s;
+        }
+        nav ul .item a:hover{
+            color: #fff;
+        }
+        nav ul .item{margin: 0 10px;}
+
+        .drop-menu{
+            display: grid;
+            position: fixed;
+            background: #04212e;
+            width: 200px;
+            height: auto;
+            padding: 15px 15px;
+            font-size: 17px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: .4s;
+        }
+        .drop-menu .drop-item{
+            opacity: 0;
+            transition: .6s;
+            transition-delay: .3s;
+        }
+        .item-drop:hover .drop-item{
+            cursor: pointer;
+            color: #f0f0f0;
+            opacity: 1;
+        }
+        .item-drop:hover .drop-menu{
+            opacity: 1;
+            pointer-events: visible;
+            height: 180px;
+        }
+        .text{
+            text-align: justify;
+            color: #f0f0f0;
+            margin: 10px;
+        }
+        h4{
+            font-size: 30px;
+            color: #f0f0f0;
+            margin: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            width: 230px;
+        }
+        footer{
+            bottom: 0;
+            text-align: center;
+            color: #f0f0f0;
+            margin: 10px;
+        }
+        .s-toggler{
+            top: 10px;
+            right: 10px;
+            width: 45px;
+            height: 25px;
+            border: 3px solid black;
+            border-radius: 25px;
+            transition: 200ms ease;
+            position: fixed;
+        }
+        .s-toggler p{
+            color: black;
+            font-family: Roboto sans-serif;
+            font-size: 10px;
+            line-height: 12px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-bottom: 0;
+            margin-top: 0;
+            z-index: 5;
+            pointer-events: none;
+            transition: 200ms ease;
+        }
+        .s-toggler p:nth-child(1){
+            left: 3px;
+        }
+        .s-toggler p:nth-child(2){
+            right: 10px;
+            color: grey;
+        }
+        .option-box{
+            background-color: black;
+            border-radius: 50px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 17px;
+            height: 17px;
+            left: 3px;
+            transition: 200ms ease;
+            cursor: pointer;
+        }
+        .option-box:active{
+            transform: translateY(-50%) scale(1);
+        }
+        .option-box-toggled{
+            left: calc(100% - 20px);
+        }
+        .s-toggler-toggled p:nth-child(1){
+            color: grey; !important;
+        }
+        .s-toggler-toggled p:nth-child(2){
+            color: black; !important;
+        }
+        .menu{
+            font-family: Roboto, sans-serif;
+            font-size: 20px;
+            cursor: pointer;
+            color: #2a2a2a;
+            transition: all 50ms;
+            text-decoration: none;
+            float: left;
+        }
+        .menu:hover{
+            color: #151515;
+        }
+        .parallax{
+            background-image: url("https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1582&q=80");
+            width: 100%;
+            height: 600px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Roboto, sans-serif;
+            text-align: center;
+            color: #f0f0f0;
+            font-size: 50px;
+            padding: 200px;
+        }
+        .nous{
+            color: #f0f0f0;
+        }
+        .nous:hover{
+            border-bottom: 1px solid grey;
+        }
+        .imge{
+            height: 60px;
+            width: 60px;
+            margin: 10px;
+            float: right;
+            border-radius: 50%;
+        }
+    </style>
+
 </head>
 <body>
+<header>
+    <div class="parallax"><a>Site d'Alexandre</a></div>
+</header>
+<main>
+    <div class="s-toggler">
+        <p></p>
+        <p></p>
+        <input type="hidden" name="option-choose" id="ToggleInput">
+        <div onclick="toggleToggler(this, 'ToggleInput')" class="option-box"></div>
+    </div>
+    <nav class="sticky">
+        <a class="team">Alexandre Menu</a>
+        <ul>
+            <li class="item"><a href="menu.html">Home</a></li>
+            <li class="item item-drop">
+                <a>A vous de jouer</a>
+                <ul class="drop-menu">
+                    <li class="item"><a href="drawing.html">Drawing</a></li>
+                    <li class="item"><a href="click.html">Catch me</a></li>
+                </ul>
+            </li>
+            <li class="item item-drop">
+                <a>A voir</a>
+                <ul class="drop-menu">
+                    <li class="item"><a href="eyes.html">Pretty Face</a></li>
+                    <li class="item"><a href="switch.html">Experiment</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <h4 id="titre">Texte sans sens</h4>
+    <div class="text" id="text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut molestie tellus erat, et malesuada enim aliquam id. Nunc mattis tempor orci, a lacinia turpis posuere id. Nulla pharetra, lacus eget hendrerit pharetra, eros ipsum iaculis mi, ut dignissim nisl ex vel ipsum. Vestibulum rhoncus aliquet erat at auctor. Proin id ligula vel purus volutpat vestibulum rhoncus quis libero. Aenean lacinia id ex in placerat. Cras tempor, ipsum eget suscipit convallis, dui lacus eleifend sem, eget auctor neque dolor in magna. Nulla ullamcorper molestie nulla, vitae porttitor purus euismod quis. Integer risus diam, efficitur eget lorem eu, fermentum consectetur ligula. Duis nec lacinia purus, vitae facilisis leo. Phasellus lacinia sapien nec mi varius pulvinar. Integer fermentum iaculis porttitor. Vivamus dolor orci, porttitor sit amet rutrum sed, malesuada eu nulla. Proin vestibulum, risus in rhoncus varius, urna leo porta dui, vel rutrum justo massa ut eros. Quisque porta augue id odio blandit ornare.
 
+        Pellentesque ac tincidunt metus. Praesent vel pharetra ante. Quisque aliquet sodales maximus. Vivamus dui massa, ultricies volutpat odio ut, iaculis lacinia magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur egestas iaculis diam, eget venenatis tortor feugiat vitae. Ut eu ultrices purus. Sed porttitor sagittis faucibus. Nulla at turpis eu libero sollicitudin porttitor. Fusce posuere arcu lorem. Aenean lacinia faucibus dui sed interdum. Sed nec diam pellentesque, dictum leo in, bibendum nisl. Sed sapien ipsum, finibus id interdum sed, facilisis consectetur lorem.
+
+        Maecenas id consequat arcu. Ut euismod viverra odio, in posuere nunc condimentum at. Aenean sed tellus luctus erat pellentesque semper. In bibendum sit amet arcu vitae rutrum. Cras vehicula nisi risus, sit amet aliquam odio sagittis eu. Proin venenatis, leo sed efficitur tincidunt, magna mauris tristique purus, eu ultrices odio purus sed mi. Quisque interdum lacus quis augue mattis, sit amet aliquam dui pharetra. Curabitur dapibus est nec nisi ultricies venenatis. Proin eu neque vitae urna molestie ullamcorper ut et dui. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus at neque neque. Morbi ac convallis neque, eleifend ullamcorper urna. In placerat facilisis lorem, at varius ex.
+
+        Morbi imperdiet purus ligula, placerat cursus velit porttitor vitae. Aenean enim lectus, fermentum quis maximus a, elementum non nisl. Sed hendrerit, lorem vitae condimentum placerat, lorem dui egestas sem, a vestibulum neque libero sit amet est. Fusce in dolor ipsum. Donec vestibulum faucibus justo id maximus. Etiam et elementum odio. Ut pulvinar sem libero, eu commodo orci sodales sodales.
+
+        Vivamus eget molestie dolor, vel pulvinar nibh. Praesent velit felis, porta et suscipit sed, feugiat nec enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi id ex vel ipsum sollicitudin pulvinar vel sed purus. Nulla facilisi. Phasellus lobortis sapien id leo condimentum laoreet. Nam tincidunt eleifend ex. Sed non gravida purus. Quisque malesuada velit at risus cursus tristique.
+
+        In condimentum nisl metus, sit amet vehicula nunc molestie quis. Suspendisse tempor dui id augue gravida, et interdum libero tempor. Quisque placerat nulla dolor, id ultrices erat ornare sit amet. Fusce urna turpis, porta in elit vitae, tristique condimentum ligula. Nunc porta mauris nibh. Cras est turpis, ultrices ut facilisis sit amet, maximus sed nisi. Pellentesque convallis facilisis magna quis hendrerit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed scelerisque malesuada mattis. Aenean iaculis, justo nec suscipit feugiat, nisl ligula dignissim ante, at lobortis eros tellus in mauris. In mauris mauris, interdum nec placerat nec, sodales at nulla. Phasellus cursus risus eleifend nisi tristique, vel auctor nisi malesuada. Maecenas faucibus mi scelerisque, sollicitudin lacus eget, scelerisque lorem. Nunc ultrices gravida libero, id sodales sem.
+
+        Nullam in nulla sit amet neque ultricies elementum quis et odio. Sed sit amet gravida dui. Morbi et sapien sit amet magna faucibus laoreet. Aenean et libero vel est sodales ultrices. Pellentesque aliquam eleifend ligula id placerat. Vivamus porta dolor at venenatis pulvinar. Vestibulum in porttitor sem, ac iaculis arcu. Donec porttitor, libero sit amet laoreet rhoncus, urna sapien fermentum risus, id iaculis tellus sem quis lectus. Integer nec neque et lectus lacinia scelerisque. Nulla posuere lectus eget bibendum placerat. Mauris nec aliquet enim. Aenean pharetra tortor et est ullamcorper, ut tristique lorem gravida. Phasellus id massa eros. Curabitur molestie arcu sed dui porta dapibus. Etiam ornare nisl sit amet magna suscipit, quis imperdiet quam molestie.
+
+        Fusce non molestie lorem. Sed pellentesque, quam ut posuere convallis, ex massa commodo sapien, gravida mattis neque diam et nibh. Phasellus quis egestas ex. Pellentesque imperdiet libero eleifend posuere finibus. Curabitur vitae finibus libero. Duis porta maximus elit, et cursus sapien venenatis in. Aenean sagittis metus a erat placerat molestie ac vitae orci. Fusce viverra sed lacus in eleifend. Pellentesque sed tincidunt ligula. Nulla facilisis, dui vitae rhoncus congue, lectus sem laoreet odio, id laoreet ligula tellus sit amet nunc. Mauris tristique arcu nec tristique viverra. Maecenas ac condimentum risus. Vestibulum finibus vulputate purus ac semper. Nulla hendrerit tempor lectus, vitae congue eros vestibulum posuere. Curabitur consequat orci eu lacus tincidunt suscipit.
+
+        Donec ac libero vel ligula lobortis pharetra vitae at ligula. Aenean efficitur hendrerit augue ac efficitur. Aliquam nec lobortis sem, at egestas arcu. Suspendisse tempor mauris id augue accumsan, et congue dui semper. Proin lobortis dui ante, at cursus ex gravida vel. Aenean eu lectus justo. Nullam ultricies, sem vitae dictum aliquet, nulla nibh mattis ipsum, porttitor faucibus dolor lorem eget arcu. Vestibulum ac feugiat ligula. Proin convallis faucibus diam quis fringilla. Cras at posuere erat. Sed a orci pharetra, gravida tellus eget, sagittis magna. Sed at lacinia lectus. Suspendisse vel pharetra nibh. Curabitur rhoncus porttitor pretium.
+
+        Pellentesque eu tempus tortor, non aliquet nunc. Integer finibus urna ac hendrerit consequat. Vestibulum ullamcorper sapien euismod ante maximus, ac hendrerit est lacinia. Ut vel ipsum sit amet nisl sagittis pellentesque. Aenean lacus ex, accumsan vitae libero in, porttitor consequat ipsum. Proin sed lectus eu mauris viverra auctor. Sed scelerisque laoreet aliquet.
+
+        Nulla dignissim rhoncus nunc vel volutpat. Vivamus cursus, mauris at condimentum ultricies, elit neque ornare turpis, sed lacinia augue sem et lectus. Nam id semper ex, quis tempor risus. Fusce enim augue, pretium non dapibus quis, eleifend sed nisl. In faucibus et felis eget volutpat. Donec non placerat orci. Nam eleifend elit non pulvinar consectetur. Nunc elementum nisl sed lectus vestibulum, eu egestas enim mattis. Suspendisse non aliquam purus, in aliquet nisi. Phasellus facilisis mollis lectus at efficitur. Donec a dapibus urna. Vestibulum velit lacus, semper sit amet augue dignissim, efficitur pulvinar diam.
+
+        Aenean pretium aliquet ex sit amet feugiat. Phasellus leo lectus, condimentum sed ex cursus, dapibus tempor nibh. Etiam eget elementum turpis. Cras et ultrices purus, id faucibus sem. Ut nec erat dui. Nam in ullamcorper quam. Phasellus elementum dolor a metus vehicula blandit. Donec felis odio, pretium id quam bibendum, consequat imperdiet velit. Pellentesque at velit quis ex consectetur rhoncus eget sed eros. Etiam neque leo, porttitor non justo nec, malesuada tincidunt nulla.
+
+        Aenean venenatis urna ut nibh ultricies, at interdum risus semper. Aenean viverra fringilla dolor at varius. Nam sed odio sed arcu ullamcorper fermentum. Suspendisse gravida metus blandit semper vestibulum. Pellentesque at lorem orci. Aliquam maximus justo lacus, sit amet malesuada ipsum porttitor a. Proin et metus lectus. Donec in malesuada massa. Quisque nisl ante, venenatis non dolor vitae, aliquet ultricies odio. Fusce vel efficitur lacus. Nullam eget quam vulputate, eleifend est eget, posuere velit. Duis volutpat aliquet augue sit amet elementum. Nullam gravida felis dui, a fringilla lectus viverra nec. Quisque volutpat congue mauris. Phasellus sed odio a arcu pretium luctus vitae gravida tellus. Aenean vestibulum semper nulla, at sodales odio bibendum eu.
+
+        Fusce porta vulputate tellus, et dictum tortor faucibus eu. Aenean placerat gravida urna, sit amet gravida dui consectetur in. Suspendisse vel quam lacus. Praesent fringilla dolor felis, efficitur pulvinar leo rhoncus et. Proin ornare ex ut mi maximus, vel ultricies mauris feugiat. Donec tristique iaculis tellus eu pretium. Vestibulum sed aliquam orci, nec rhoncus felis. Vivamus ultrices at libero eu porta. Suspendisse potenti. Curabitur eu odio id massa sodales vehicula. Phasellus at libero pretium ipsum eleifend finibus ac et dui. Ut at est et diam volutpat sagittis. Ut auctor id odio eget pretium.
+
+        Sed eu elit consectetur, aliquet est vitae, feugiat magna. Fusce tellus justo, egestas vel augue viverra, ultricies vulputate massa. Aliquam ultrices nibh sed eleifend aliquam. In vitae suscipit ante, lacinia dapibus massa. Quisque porta dapibus viverra. Morbi ac auctor nisl. Nunc volutpat enim a felis aliquet, eu facilisis dolor vestibulum. Praesent nibh augue, condimentum vitae quam fermentum, auctor pulvinar quam. Morbi sollicitudin vulputate enim molestie pulvinar.
+
+        Donec ut sagittis nisi. Vivamus ac massa ante. Fusce urna nisi, pretium ac purus sit amet, euismod pellentesque nunc. Cras vitae rutrum ex. Phasellus vitae sapien orci. In hendrerit mi eu eros viverra ornare. Curabitur viverra congue odio vitae gravida. In a risus ac enim facilisis tincidunt. Pellentesque gravida velit posuere tortor sodales, ac faucibus ex facilisis. Maecenas porttitor convallis posuere. Aliquam erat volutpat. Duis id tortor nisl.
+
+        Pellentesque fermentum lacus dapibus, dignissim nulla porttitor, egestas turpis. Aliquam condimentum mattis nibh, sit amet imperdiet magna. Quisque scelerisque velit at vestibulum elementum. Nam auctor venenatis fermentum. Vestibulum in posuere magna. Vestibulum ullamcorper pulvinar neque, vitae convallis lorem facilisis quis. Sed est enim, interdum id mauris vel, bibendum sodales tellus. Cras eget luctus nunc, varius mollis ligula. Etiam aliquam sodales nulla, porta condimentum elit viverra vitae. Proin dictum fermentum nunc, vel placerat elit mattis et. Nunc fermentum vulputate congue. Fusce vulputate mattis elit. Nullam laoreet facilisis felis a lacinia. Suspendisse justo nisi, feugiat et nibh eu, porttitor auctor quam. Nunc mi nunc, ullamcorper eget viverra eget, aliquet eget neque. Donec sed molestie ex, eget tincidunt justo.
+
+        Curabitur sodales tellus eget mollis laoreet. Donec a fringilla tortor. Quisque eget condimentum mi. In hac habitasse platea dictumst. Vestibulum molestie vestibulum mauris, vel vehicula purus laoreet id. Suspendisse dictum neque et metus sodales vestibulum. Vestibulum sed porttitor est. Aenean at orci id ante volutpat pharetra non vitae odio.
+
+        Donec euismod lectus in dui suscipit, vel interdum tortor hendrerit. Curabitur eget tellus porta, ornare libero sed, commodo ipsum. In pretium tincidunt mauris, rhoncus lobortis est commodo id. Donec nec tellus blandit, mattis nibh eu, porttitor sem. Donec ac lectus magna. Donec tempor, erat dignissim placerat convallis, quam felis porta augue, eu blandit erat urna nec ligula. Nulla venenatis pellentesque nunc eu cursus. Morbi et dolor non magna ultricies sodales. Mauris rhoncus consectetur felis consectetur commodo. Cras ut ex ac urna sodales sodales. Mauris ut leo sed neque consequat rhoncus sed et felis. Quisque orci lorem, consequat ac vehicula eget, hendrerit vel turpis.
+
+        Maecenas facilisis velit libero, in iaculis arcu tristique at. Mauris quis mi sollicitudin nulla placerat tempus et vitae arcu. Integer vehicula magna eget eleifend viverra. Aliquam enim odio, suscipit a sagittis a, scelerisque et risus. Mauris nec nisi eget elit hendrerit iaculis id vitae mi. Praesent non ipsum ac elit volutpat porta. Proin blandit consectetur sem, ultrices posuere magna egestas et. Praesent eleifend, lectus elementum egestas vulputate, metus ex consectetur urna, in tristique purus erat et dui. Etiam neque dui, congue facilisis eros vitae, semper bibendum dui. Fusce eget sapien a tortor maximus sodales in fringilla libero. Integer a felis purus. Nulla tortor est, lacinia mollis vulputate varius, tempus id risus. Aliquam vitae varius libero, ac tempor ligula. Nunc eget felis molestie, venenatis dolor in, scelerisque metus. Suspendisse commodo diam a condimentum condimentum.
+    </div>
+    <footer>
+        <img style="border-radius: 10px; border: 3px solid #151515" src="https://lh5.googleusercontent.com/-oXk817WFqZE/UFc8V6827SI/AAAAAAAABGc/6fhBunv6dvk/s400/Rambo-3-muscles.jpg" alt="">
+        <div id="citation" style="margin: 10px">Rambo : "C'etait pas ma guerre".</div>
+        <a id="nous" class="nous" href="nous.html">Qui sommes-nous</a>
+        <div>
+            <a href="https://www.facebook.com/"><img class="imge" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.freeiconspng.com%2Fuploads%2Ffacebook-png-icon-follow-us-facebook-1.png&f=1&nofb=1" alt=""></a>
+            <a href="https://www.instagram.com/"><img class="imge" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpngimg.com%2Fuploads%2Finstagram%2Finstagram_PNG11.png&f=1&nofb=1" alt=""></a>
+            <a href="https://twitter.com/explore"><img class="imge" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pngall.com%2Fwp-content%2Fuploads%2F2016%2F07%2FTwitter.png&f=1&nofb=1" alt=""></a>
+        </div>
+
+    </footer>
+</main>
+<script type="application/javascript">
+    function toggleToggler(ele, inputId) {
+        const input = document.getElementById(inputId);
+        ele.classList.toggle('option-box-toggled');
+        ele.parentElement.classList.toggle('s-toggler-toggled');
+        if(ele.classList.contains('option-box-toggled')){
+            input.value = 'option2';
+            document.body.style.backgroundColor = "#f0f0f0";
+            document.getElementById("text").style.color = "#2a2a2a";
+            document.getElementById("citation").style.color = "#2a2a2a";
+            document.getElementById("titre").style.color = "#2a2a2a";
+            document.getElementById("nous").style.color = "#2a2a2a";
+        }else{
+            input.value = 'option';
+            document.body.style.backgroundColor = "#2a2a2a";
+            document.getElementById("text").style.color = "#f0f0f0";
+            document.getElementById("citation").style.color = "#f0f0f0";
+            document.getElementById("titre").style.color = "#f0f0f0";
+            document.getElementById("nous").style.color = "#f0f0f0";
+        }
+    }
+</script>
 </body>
 </html>
