@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link REL="SHORTCUT ICON" href="efre.png">
+    <title>Arrache toi les cheveux</title>
+    <style>
+        .page{
+            background-image: url("https://wallpapercave.com/wp/SrvE2xe.jpg");
+        }
+       .catch{
+           border-radius: 50%;
+           max-width: 300px;
+           max-height: 200px;
+           font-weight: 100;
+           cursor: pointer;
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transition: .4s ease;
+       }
+        .catch:hover{
+            transform: scale(1.1);
+        }
+        .imge{
+            width: 200px;
+            height: 100px;
+        }
+        .menu{
+            font-family: Roboto, sans-serif;
+            font-size: 20px;
+            cursor: pointer;
+            color: #f0f0f0;
+            transition: all 50ms;
+            text-decoration: none;
+            float: left;
+        }
+    </style>
+</head>
+<body class="page">
+<main>
+    <a id="menu" class="menu" href="menu.html">← Retour Menu</a>
+    <embed src="Nyan%20Cat%20%5Boriginal%5D.mp3" loop=1 autoplay=1 autostart="true" width="2" height="0">
+    <div onclick="catchMe(this)" class="catch">
+        <p><img class="imge" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F10j1sRnpiklXB6%2F200.gif&f=1&nofb=1" alt=""></p>
+    </div>
+</main>
+    <script type="application/javascript">
+        function catchMe(ele) {
+            ele.style.top = getRandomInt(0, (window.innerHeight - ele.offsetHeight)) + 'px';
+            ele.style.left = getRandomInt(0, (window.innerWidth - ele.offsetWidth)) + 'px';
+        }
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+    </script>
+</body>
+</html>
