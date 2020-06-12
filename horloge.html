@@ -2,9 +2,9 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <link REL="SHORTCUT ICON" href="efre.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link REL="SHORTCUT ICON" href="../../Downloads/Web-Project-master/logoo.jpg">
     <title>Le Temps</title>
 </head>
 
@@ -12,13 +12,6 @@
     <header>
     <div class="titre"><a>A la recherche du temps perdu...</a></div>
     </header>
-    <div class="horloge">
-        <div class="face">
-            <div class="aiguille heure"></div>
-            <div class="aiguille min"></div>
-            <div class="aiguille seconde"></div>
-        </div>
-    </div>
     <style>
         html {
             background-image:linear-gradient(to right, rgb(5, 18, 82), rgb(280, 190, 120))
@@ -63,12 +56,20 @@
             transform: rotate(90deg);
             transition: all 0.05s ease;
         }
-        
         .heure {
             width: 35%!important;
             right: 50%;
         }
     </style>
+
+    <div class="horloge">
+        <div class="face">
+            <div class="aiguille heure"></div>
+            <div class="aiguille min"></div>
+            <div class="aiguille seconde"></div>
+        </div>
+    </div>
+
     <script>
         const secondeDiv = document.querySelector('.seconde');
         const minDiv = document.querySelector('.min');
