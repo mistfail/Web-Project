@@ -1,11 +1,11 @@
 <!doctype html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <title> Formulaire </title>
     </head>
     <body>
-        <div class="login-container">
+        <div class="formulaire">
         <div class="login-html">
             <input id="particulier" type="radio" name="tab" class="tab-part" checked><label for="particulier" class="tab uppercase">Membre</label>
             <input id="pro" type="radio" name="tab" class="tab-pro"><label for="pro" class="tab uppercase">Sondage</label>
@@ -16,7 +16,7 @@
                         <input  name="nom" type="text" class="input" placeholder="Nom">
                     </div>
                     <div class="group">
-                        <input  type="email" class="input" data-type="email" placeholder="Mail">
+                        <input  type="email" name = "mail" class="input" data-type="email" placeholder="Mail">
                     </div>
                     <div class="group">
                         <input type="submit" class="button uppercase" value="Envoyer">
@@ -46,11 +46,11 @@
     </div>
     <style>
         html{
-                background-image:linear-gradient(to right, rgb(5, 18, 82), rgb(280, 190, 120))
+                background-image:linear-gradient(to right, rgb(238, 232, 232), rgb(255, 215, 91))
             }
         body{
             margin:0;
-            font-family: 'Julius Sans One', sans-serif;
+            font-family: sans-serif;
             font-size: 14px;
         }
         *{
@@ -87,7 +87,7 @@
             border-color:#282A2C;
             cursor:default;
         }
-        .login-container{
+        .formulaire{
             margin:auto;
             max-width:525px;
             min-height:670px;
@@ -143,8 +143,25 @@
         .login-html .tab-pro:checked + .tab + .login-form .block-pro{
             transform:rotate(0);
         }
-
-
     </style>
+    <script>
+        function ajouter() {
+            const testForm = document.App;
+            console.log("la variable Nom");
+            console.log(testForm.nom.value);
+            let utilisateur = [
+                {
+                    nom: testForm.nom.value,
+                    email: testForm.mail.value,
+                },
+            ];
+            let table = document.querySelector("#utilisateur");
+            if (testForm.nom.value && testForm.mail.value) {
+                generateTable(table, utilisateur);
+                Wait();
+                Inter();
+            }
+        }
+    </script>
     </body>
 </html>
