@@ -5,163 +5,197 @@
         <title> Formulaire </title>
     </head>
     <body>
-        <div class="formulaire">
-        <div class="login-html">
-            <input id="particulier" type="radio" name="tab" class="tab-part" checked><label for="particulier" class="tab uppercase">Membre</label>
-            <input id="pro" type="radio" name="tab" class="tab-pro"><label for="pro" class="tab uppercase">Sondage</label>
-            <div class="login-form">
-                <form>
-                <div class="block-form block-particulier">
-                    <div class="group">
-                        <input  name="nom" type="text" class="input" placeholder="Nom">
+            <div class="formulaire">
+            <div class="login-html">
+                <input id="particulier" type="radio" name="tab" class="tab-part" checked><label for="particulier" class="tab uppercase">Membre</label>
+                <input id="pro" type="radio" name="tab" class="tab-pro"><label for="pro" class="tab uppercase">Sondage</label>
+                <div class="login-form">
+                    <form>
+                    <div class="block-form block-particulier">
+                        <div class="group">
+                            <input  name="nom" type="text" class="input" placeholder="Nom">
+                        </div>
+                        <div class="group">
+                            <input  type="email" name = "mail" class="input" data-type="email" placeholder="Mail">
+                        </div>
+                        <div class="group">
+                            <input type="submit" class="button uppercase" value="Envoyer">
+                        </div>
+                        </div>
+                        <div class="block-form block-pro">
+
+                        <div class="group">
+                            <input type="text" class="input" placeholder="Nom du site préféré">
+                        </div>
+                        <div class="group">
+                            <input  type="text" class="input" placeholder="Nom du deuxième site préféré">
+                        </div>
+                        <div class="group">
+                        <input type="range" min="200" max="800" value="200" step="1">
+                        </div>
+                        <div class="group">
+                            <input  type="number" class="input" placeholder="temps moyen passé à s'ennuyer par jours en minutes">
+                        </div>
+                        <div class="group">
+                            <input type="submit" class="button uppercase" value="Envoyer">
+                        </div>
                     </div>
-                    <div class="group">
-                        <input  type="email" name = "mail" class="input" data-type="email" placeholder="Mail">
-                    </div>
-                    <div class="group">
-                        <input type="submit" class="button uppercase" value="Envoyer">
-                    </div>
-                    </div>
-                    <div class="block-form block-pro">
-                    
-                    <div class="group">
-                        <input type="text" class="input" placeholder="Nom du site préféré">
-                    </div>
-                    <div class="group">
-                        <input  type="text" class="input" placeholder="Nom du deuxième site préféré">
-                    </div>
-                    <div class="group">
-                    <input type="range" min="200" max="800" value="200" step="1">
-                    </div> 
-                    <div class="group">
-                        <input  type="number" class="input" placeholder="temps moyen passé à s'ennuyer par jours en minutes">
-                    </div>
-                    <div class="group">
-                        <input type="submit" class="button uppercase" value="Envoyer">
-                    </div>
+                    </form>
                 </div>
-                </form>
             </div>
         </div>
-    </div>
-    <style>
-        html{
-                background-image:linear-gradient(to right, rgb(238, 232, 232), rgb(255, 215, 91))
+        <table id="utilisateur" class="aff">
+            <tr class="add">
+                <h1 id="U"> <br></h1>
+                <th>Nom</th>
+                <th>Email</th>
+            </tr>
+        </table>
+        <style>
+            html{
+                background-image:linear-gradient(to right, rgb(238, 232, 232), rgb(255, 215, 91));
+                }
+            body{
+                margin:0;
+                font-family: sans-serif;
+                font-size: 14px;
             }
-        body{
-            margin:0;
-            font-family: sans-serif;
-            font-size: 14px;
-        }
-        *{
-        box-sizing:border-box
-        }
-        a{
-            color:inherit;
-            text-decoration:none
-        }
-        [type="radio"]
-        {
-            display:none;
-        }
-        input {
-        margin: .4rem;
-        }
-        .uppercase{
-            text-transform:uppercase;
-        }
-        .login-html .tab{
-            font-size:23px;
-            font-weight: 500;
-            color: rgb(108,118,127);
-            cursor: pointer;
-            margin-right:15px;
-            padding-bottom:5px;
-            margin:0 15px 50px 0;
-            display:inline-block;
-            border-bottom:2px solid transparent;
-        }
-        .login-html .tab-part:checked + .tab,
-        .login-html .tab-pro:checked + .tab{
-            color:#282A2C;
-            border-color:#282A2C;
-            cursor:default;
-        }
-        .formulaire{
-            margin:auto;
-            max-width:525px;
-            min-height:670px;
-            position:relative;
-            box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
-        }
-        .login-html{
-            width:100%;
-            height:100%;
-            position:absolute;
-            padding:50px 50px 50px 50px;
-            background:linear-gradient(rgba(207,207,207,.7), rgba(255,255,255,.7));
-        }
-        
-        .block-form{
-            top:0;
-            left:0;
-            right:0;
-            bottom:0;
-            position:absolute;
-            transform:rotateY(180deg);
-            backface-visibility:hidden;
-            transition:all .4s linear;
-        }
-        .login-form{
-            min-height:345px;
-            position:relative;
-            perspective:1000px;
-            transform-style:preserve-3d;
-        }
-        .login-form input
-        {
-            width:100%;
-            color:#282A2C;
-            display:block;
-            border:none;
-            padding:15px 20px;
-            border-radius:10px;
-            background:rgba(255,255,255,0.2);
-            font-size: 16px;
-        }
-        .login-form .group{
-            margin-bottom:32px;
-        }
-        .login-form .button{
-            background:rgb(5, 18, 82);
-            color: #FFFFFF;
-            cursor: pointer;
-        }
-        .login-html .tab-part:checked + .tab + .tab-pro + .tab + .login-form .block-particulier{
-            transform:rotate(0);
-        }
-        .login-html .tab-pro:checked + .tab + .login-form .block-pro{
-            transform:rotate(0);
-        }
-    </style>
-    <script>
-        function ajouter() {
-            const testForm = document.App;
-            console.log("la variable Nom");
-            console.log(testForm.nom.value);
-            let utilisateur = [
-                {
-                    nom: testForm.nom.value,
-                    email: testForm.mail.value,
-                },
-            ];
-            let table = document.querySelector("#utilisateur");
-            if (testForm.nom.value && testForm.mail.value) {
-                generateTable(table, utilisateur);
-                Wait();
-                Inter();
+            footer{
+                bottom: 0;
+                text-align: center;
+                color: #f0f0f0;
+                margin: 10px;
             }
-        }
-    </script>
+            .imge{
+                height: 60px;
+                width: 60px;
+                margin: 10px;
+                position: center;
+                border-radius: 50%;
+            }
+            *{
+                box-sizing:border-box
+            }
+            a{
+                color:inherit;
+                text-decoration:none
+            }
+            [type="radio"]
+            {
+                display:none;
+            }
+            input {
+            margin: .4rem;
+            }
+            .uppercase{
+                text-transform:uppercase;
+            }
+            .login-html .tab{
+                font-size:23px;
+                font-weight: 500;
+                color: rgb(108,118,127);
+                cursor: pointer;
+                margin-right:15px;
+                padding-bottom:5px;
+                margin: 0 15px 50px 0;
+                display:inline-block;
+                border-bottom:2px solid transparent;
+            }
+            .login-html .tab-part:checked + .tab,
+            .login-html .tab-pro:checked + .tab{
+                color:#282A2C;
+                border-color:#282A2C;
+                cursor:default;
+            }
+            .login-html{
+                width:100%;
+                height:100%;
+                position:absolute;
+                padding:50px 50px 50px 50px;
+                background:linear-gradient(rgba(207,207,207,.7), rgba(255,255,255,.7));
+            }
+            .block-form{
+                top:0;
+                left:0;
+                right:0;
+                bottom:0;
+                position:absolute;
+                transform:rotateY(180deg);
+                backface-visibility:hidden;
+                transition:all .4s linear;
+            }
+            .login-form{
+                min-height:345px;
+                position:relative;
+                perspective:1000px;
+                transform-style:preserve-3d;
+            }
+            .login-form input
+            {
+                width:100%;
+                color:#282A2C;
+                display:block;
+                border:none;
+                padding:15px 20px;
+                border-radius:10px;
+                background:rgba(255,255,255,0.2);
+                font-size: 16px;
+            }
+            .login-form .group{
+                margin-bottom:32px;
+            }
+            .login-form .button{
+                background:rgb(5, 18, 82);
+                color: #FFFFFF;
+                cursor: pointer;
+            }
+            .login-html .tab-part:checked + .tab + .tab-pro + .tab + .login-form .block-particulier{
+                transform:rotate(0);
+            }
+            .login-html .tab-pro:checked + .tab + .login-form .block-pro{
+                transform:rotate(0);
+            }
+            .formulaire{
+                margin:auto;
+                max-width:525px;
+                min-height:450px;
+                position:relative;
+                box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+            }
+            .aff{
+                margin:auto;
+
+                width: 50%;
+                max-width:525px;
+                min-height:200px;
+                background:linear-gradient(rgba(250,250,250,.7),rgba(242,228,183,.7 ));
+            }
+        </style>
+        <script>
+            function ajouter() {
+                const testForm = document.App;
+                console.log("la variable Nom");
+                console.log(testForm.nom.value);
+                let utilisateur = [
+                    {
+                        nom: testForm.nom.value,
+                        email: testForm.mail.value,
+                    },
+                ];
+                let table = document.querySelector("#utilisateur");
+                if (testForm.nom.value && testForm.mail.value) {
+                    generateTable(table, utilisateur);
+                    Wait();
+                    Inter();
+                }
+            }
+        </script>
     </body>
+    <footer>
+        <div>
+            <a href="https://www.facebook.com/"><img class="imge" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.freeiconspng.com%2Fuploads%2Ffacebook-png-icon-follow-us-facebook-1.png&f=1&nofb=1" alt=""></a>
+            <a href="https://www.instagram.com/"><img class="imge" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpngimg.com%2Fuploads%2Finstagram%2Finstagram_PNG11.png&f=1&nofb=1" alt=""></a>
+            <a href="https://twitter.com/explore"><img class="imge" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pngall.com%2Fwp-content%2Fuploads%2F2016%2F07%2FTwitter.png&f=1&nofb=1" alt=""></a>
+        </div>
+    </footer>
 </html>
