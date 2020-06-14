@@ -2,6 +2,7 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
+        <link REL="SHORTCUT ICON" href="efre.png">
         <title> Formulaire </title>
     </head>
     <body>
@@ -13,10 +14,14 @@
                     <form>
                     <div class="block-form block-particulier">
                         <div class="group">
-                            <input  name="nom" type="text" class="input" placeholder="Nom">
+                            <label>
+                                <input  name="nom" type="text" class="input" placeholder="Nom">
+                            </label>
                         </div>
                         <div class="group">
-                            <input  type="email" name = "mail" class="input" data-type="email" placeholder="Mail">
+                            <label>
+                                <input  type="email" name = "mail" class="input" data-type="email" placeholder="Mail">
+                            </label>
                         </div>
                         <div class="group">
                             <input type="submit" id = "btn1" class="button uppercase" value="Ajouter" onclick="ajouter()">
@@ -25,21 +30,32 @@
                         <div class="block-form block-pro">
 
                         <div class="group">
-                            <input type="text" class="input" placeholder="Nom du site préféré">
+                            <label>
+                                <input type="text" class="input" placeholder="Nom du site préféré">
+                            </label>
                         </div>
                         <div class="group">
-                            <input  type="text" class="input" placeholder="Nom du deuxième site préféré">
+                            <label>
+                                <input  type="text" class="input" placeholder="Nom du deuxième site préféré">
+                            </label>
                         </div>
                         <div class="group">
-                        <input type="range" min="200" max="800" value="200" step="1">
+                            <label>
+                                <input type="range" min="200" max="800" value="200" step="1">
+                            </label>
                         </div>
                         <div class="group">
-                            <input  type="number" class="input" placeholder="temps moyen passé à s'ennuyer par jours en minutes">
+                            <label>
+                                <input  type="number" class="input" placeholder="temps moyen passé à s'ennuyer par jours en minutes">
+                            </label>
                         </div>
                         <div class="group">
                             <input type="submit" id = "btn2" class="button uppercase" value="Ajouter" onclick="ajouter()">
                         </div>
                     </div>
+                        <section>
+                            <input type="submit" class="button uppercase" onclick= "suppr()" value="Tout supprimer">
+                        </section>
                     </form>
                 </div>
             </div>
@@ -51,9 +67,6 @@
                     <th>Nom</th>
                     <th>Email</th>
                 </tr>
-                <div class = "login-form">
-                <input type="submit" class="button uppercase" onclick= "suppr()" value="Tout supprimer">
-                </div>
             </table>
         </div>
     <style>
@@ -100,7 +113,6 @@
                 font-weight: 500;
                 color: rgb(108,118,127);
                 cursor: pointer;
-                margin-right:15px;
                 padding-bottom:5px;
                 margin: 0 15px 50px 0;
                 display:inline-block;
