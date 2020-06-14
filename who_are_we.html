@@ -41,6 +41,17 @@
         }
         .img{
             border-radius: 5px;
+            height: 300px;
+            width: 250px;
+        }
+        table{
+            border-spacing: 6px;
+
+        }
+        th, td{
+            border-collapse: collapse;
+            padding: 10px;
+            border-bottom: none;
         }
     </style>
 </head>
@@ -50,23 +61,42 @@
         <a class="menu" href="main.html">← Retour Menu</a>
     </header>
     <div style="margin-top: 10px">
-        <section class="team">
-            <article class="membre">
-                <p>Constance</p>
-                <img class="img" src="ramboconstance.png" alt="">
-                <p>Constance elle...</p>
-            </article>
-            <article class="membre">
-                <p>Alexandre</p>
-                <img class="img" src="Alexwargenner.png" alt="">
-                <p>Alexandre il ...</p>
-            </article>
-            <article class="membre">
-                <p>Marie</p>
-                <img class="img" src="marie%20stallone.png" alt="">
-                <p>Marie elle...</p>
-            </article>
-        </section>
+        <table>
+            <tr>
+                <section class="team">
+                    <article class="membre">
+                        <th>
+                        <p>Constance</p>
+                        <img class="img" src="ramboconstance.png" alt="">
+                        <p>Constance elle...</p>
+                        </th>
+                    </article>
+                    <article class="membre">
+                        <th>
+                        <p>Alexandre</p>
+                        <img class="img" src="Alexwargenner.png" alt="">
+                        <p>Alexandre il ...</p>
+                        </th>
+                    </article>
+                    <article class="membre">
+                        <th>
+                            <p>Rambo</p>
+                            <img class="img" src="https://lh5.googleusercontent.com/-oXk817WFqZE/UFc8V6827SI/AAAAAAAABGc/6fhBunv6dvk/s400/Rambo-3-muscles.jpg" alt="">
+                            <div id="citation" style="margin: 10px">Rambo : "C'etait pas ma guerre".</div>
+                        <th>
+                    </article>
+                    <article class="membre">
+                        <th>
+                        <p>Marie</p>
+                        <img class="img" src="marie%20stallone.png" alt="">
+                        <p>Marie elle...</p>
+                        <th>
+                    </article>
+
+                </section>
+            </tr>
+        </table>
+
     </div>
 </main>
 <footer style="bottom: 0">
