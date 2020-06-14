@@ -4,81 +4,10 @@
         <meta charset="UTF-8">
         <link REL="SHORTCUT ICON" href="efre.png">
         <title> Formulaire </title>
-    </head>
-    <body>
-            <div class="formulaire">
-            <div class="login-html">
-                <input id="particulier" type="radio" name="tab" class="tab-part" checked><label for="particulier" class="tab uppercase">Membre</label>
-                <input id="pro" type="radio" name="tab" class="tab-pro"><label for="pro" class="tab uppercase">Sondage</label>
-                <div class="login-form">
-                    <form>
-                    <div class="block-form block-particulier">
-                        <div class="group">
-                            <label>
-                                <input  name="nom" type="text" class="input" placeholder="Nom">
-                            </label>
-                        </div>
-                        <div class="group">
-                            <label>
-                                <input  type="email" name = "mail" class="input" data-type="email" placeholder="Mail">
-                            </label>
-                        </div>
-                        <div class="group">
-                            <input type="submit" id = "btn1" class="button uppercase" value="Ajouter" onclick="ajouter()">
-                        </div>
-                        </div>
-                        <div class="block-form block-pro">
-
-                        <div class="group">
-                            <label for="liste">Quel est votre site préféré:</label>
-
-                            <select name="liste" id="liste">
-                                <option value="">--Please choose a site--</option>
-                                <option value="Ennuitorium">Ennuitorium</option>
-                                <option value="VDM">VDM</option>
-                                <option value="Savoir inutile">Savoir inutile</option>
-                                <option value="Chuck Norris facts">Chuck Norris facts</option>
-                                <option value="Akinator">Akinator</option>
-                                <option value="Oui ou Non">Oui ou Non</option>
-                                <option value="Wikihow">Wikihow</option>
-                                <option value="Find the invisible cow">Find the invisible cow</option>
-                                <option value="Koala to the max">Koala to the max</option>
-                                <option value="Always judge a book by its cover">Always judge a book by its cover</option>
-                                <option value="The useless web">The useless web</option>
-                                <option value="Do nothing for 2 minuts">Do nothing for 2 minuts</option>
-                            </select>
-                        </div>
-                        <div class="group">
-                            <label>
-                                <input  type="number" class="input" placeholder="temps passé à s'ennuyer par jour en heures">
-                            </label>
-                        </div>
-                        <div class="group">
-                            <input type="submit" id = "btn2" class="button uppercase" value="Ajouter" onclick="ajouter()">
-                        </div>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <br><br>
-        <div class = "aff">
-            <div class="login-form">
-                <table>
-                    <tr>
-                        <th>Nom</th>
-                        <th>Email</th>
-                    </tr>
-                </table>
-                <section>
-                    <input type="submit" class="button uppercase" onclick= "suppr()" value="Tout supprimer">
-                </section>
-            </div>
-        </div>
-    <style>
+        <style>
             html{
                 background-image:linear-gradient(to right, rgb(238, 232, 232), rgb(255, 215, 91));
-                }
+            }
             body{
                 margin:0;
                 font-family: sans-serif;
@@ -109,7 +38,7 @@
                 display:none;
             }
             input {
-            margin: .4rem;
+                margin: .4rem;
             }
             .uppercase{
                 text-transform:uppercase;
@@ -204,6 +133,113 @@
                 border-bottom: 2px solid rgb(5, 18, 82);
             }
         </style>
+    </head>
+    <body>
+
+            <div class="formulaire">
+            <div class="login-html">
+                <input id="particulier" type="radio" name="tab" class="tab-part" checked><label for="particulier" class="tab uppercase">Membre</label>
+                <input id="pro" type="radio" name="tab" class="tab-pro"><label for="pro" class="tab uppercase">Sondage</label>
+                <div class="login-form">
+                    <form id="App" name="App" action="formulaire.html" method="post">
+                    <div class="block-form block-particulier">
+                        <div class="group">
+                            <label>
+                                <input  name="nom" type="text" class="input" placeholder="Nom">
+                            </label>
+                        </div>
+                        <div class="group">
+                            <label>
+                                <input  type="email" name = "mail" class="input" data-type="email" placeholder="Mail">
+                            </label>
+                        </div>
+                        <div class="group">
+                            <input type="button" id = "btn6" class="button uppercase" value="Ajouter" onclick="ajouter()">
+                        </div>
+                    </div>
+                        <div class="block-form block-pro">
+
+                        <div class="group">
+                            <label for="liste">Quel est votre site préféré:</label>
+
+                            <select name="liste" id="liste">
+                                <option value="">--Please choose a site--</option>
+                                <option value="Ennuitorium">Ennuitorium</option>
+                                <option value="VDM">VDM</option>
+                                <option value="Savoir inutile">Savoir inutile</option>
+                                <option value="Chuck Norris facts">Chuck Norris facts</option>
+                                <option value="Akinator">Akinator</option>
+                                <option value="Oui ou Non">Oui ou Non</option>
+                                <option value="Wikihow">Wikihow</option>
+                                <option value="Find the invisible cow">Find the invisible cow</option>
+                                <option value="Koala to the max">Koala to the max</option>
+                                <option value="Always judge a book by its cover">Always judge a book by its cover</option>
+                                <option value="The useless web">The useless web</option>
+                                <option value="Do nothing for 2 minuts">Do nothing for 2 minuts</option>
+                            </select>
+                        </div>
+                        <div class="group">
+                            <label>
+                                <input name="time" type="number" class="input" placeholder="temps passé à s'ennuyer par jour en heures">
+                            </label>
+                        </div>
+                        <div class="group">
+                            <input type="button" id = "btn2" class="button uppercase" value="Ajouter" onclick="ajouter()">
+                        </div>
+                            <section>
+                                <input type="button" class="button uppercase" onclick= "suppr()" value="Tout supprimer">
+                            </section>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class = "aff">
+            <div class="login-form">
+                <table id="utils">
+                    <tr>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>site préféré</th>
+                        <th>Temps à s'ennuyer</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    <script type="application/javascript">
+        function ajouter() {
+            const testForm = document.App;
+            console.log(testForm.nom.value);
+            let user = [
+                {
+                    nom: testForm.nom.value,
+                    email: testForm.mail.value,
+                    Web: testForm.liste.value,
+                    Time: testForm.time.value
+                },
+            ];
+            let table = document.querySelector("#utils");
+                generateTable(table, user);
+        }
+        function generateTable(table, data) {
+            for (let element of data) {
+                let row = table.insertRow();
+                for (const key in element) {
+                    let cell = row.insertCell();
+                    let text = document.createTextNode(element[key]);
+                    cell.appendChild(text);
+                }
+            }
+        }
+
+        function suppr() {
+            const myTable = document.getElementById("utils");
+            const rowCount = myTable.rows.length;
+            for (let x = rowCount - 1; x > 0; x--) {
+                myTable.deleteRow(x);
+            }
+        }
+    </script>
     </body>
     <footer>
         <div>
