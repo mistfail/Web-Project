@@ -122,15 +122,20 @@
                 max-width:525px;
                 min-height:200px;
                 background:linear-gradient(rgba(250,250,250,.7),rgba(242,228,183,.7 ));
+                box-shadow: 0 12px 15px 0 rgba(0,0,0,.24), 0 17px 50px 0 rgba(0,0,0,.19);
             }
             table{
                 border-spacing: 6px;
+                margin: auto;
 
+            }
+            th{
+                border-bottom: 2px solid rgb(5, 18, 82);
             }
             th, td{
                 border-collapse: collapse;
                 padding: 10px;
-                border-bottom: 2px solid rgb(5, 18, 82);
+
             }
             .menu{
                 font-family: Roboto, sans-serif;
@@ -164,29 +169,31 @@
                         </div>
                         <div class="group">
                             <input type="button" id = "btn6" class="button uppercase" value="Ajouter" onclick="ajouter()">
+                            <section>
+                                <input type="button" class="button uppercase" onclick= "suppr()" value="Tout supprimer">
+                            </section>
                         </div>
                     </div>
-                        <div class="block-form block-pro">
+                    <div class="block-form block-pro">
+                    <div class="group">
+                        <label for="liste">Quel est votre site préféré:</label>
 
-                        <div class="group">
-                            <label for="liste">Quel est votre site préféré:</label>
-
-                            <select name="liste" id="liste">
-                                <option value="">--Please choose a site--</option>
-                                <option value="Ennuitorium">Ennuitorium</option>
-                                <option value="VDM">VDM</option>
-                                <option value="Savoir inutile">Savoir inutile</option>
-                                <option value="Chuck Norris facts">Chuck Norris facts</option>
-                                <option value="Akinator">Akinator</option>
-                                <option value="Oui ou Non">Oui ou Non</option>
-                                <option value="Wikihow">Wikihow</option>
-                                <option value="Find the invisible cow">Find the invisible cow</option>
-                                <option value="Koala to the max">Koala to the max</option>
-                                <option value="Always judge a book by its cover">Always judge a book by its cover</option>
-                                <option value="The useless web">The useless web</option>
-                                <option value="Do nothing for 2 minuts">Do nothing for 2 minuts</option>
-                            </select>
-                        </div>
+                        <select name="liste" id="liste">
+                            <option value="">--Please choose a site--</option>
+                            <option value="Ennuitorium">Ennuitorium</option>
+                            <option value="VDM">VDM</option>
+                            <option value="Savoir inutile">Savoir inutile</option>
+                            <option value="Chuck Norris facts">Chuck Norris facts</option>
+                            <option value="Akinator">Akinator</option>
+                            <option value="Oui ou Non">Oui ou Non</option>
+                            <option value="Wikihow">Wikihow</option>
+                            <option value="Find the invisible cow">Find the invisible cow</option>
+                            <option value="Koala to the max">Koala to the max</option>
+                            <option value="Always judge a book by its cover">Always judge a book by its cover</option>
+                            <option value="The useless web">The useless web</option>
+                            <option value="Do nothing for 2 minuts">Do nothing for 2 minuts</option>
+                        </select>
+                    </div>
                         <div class="group">
                             <label>
                                 <input name="time" type="number" class="input" placeholder="temps passé à s'ennuyer par jour en heures">
@@ -194,15 +201,17 @@
                         </div>
                         <div class="group">
                             <input type="button" id = "btn2" class="button uppercase" value="Ajouter" onclick="ajouter()">
-                        </div>
+
                             <section>
                                 <input type="button" class="button uppercase" onclick= "suppr()" value="Tout supprimer">
                             </section>
+                        </div>
                     </div>
                     </form>
                 </div>
             </div>
         </div>
+            <br> <br>
         <div class = "aff">
             <div class="login-form">
                 <table id="utils">
@@ -251,10 +260,8 @@
     </script>
     </body>
     <footer>
-        <div>
             <a href="https://www.facebook.com/"><img class="imge" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.freeiconspng.com%2Fuploads%2Ffacebook-png-icon-follow-us-facebook-1.png&f=1&nofb=1" alt=""></a>
             <a href="https://www.instagram.com/"><img class="imge" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpngimg.com%2Fuploads%2Finstagram%2Finstagram_PNG11.png&f=1&nofb=1" alt=""></a>
             <a href="https://twitter.com/explore"><img class="imge" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pngall.com%2Fwp-content%2Fuploads%2F2016%2F07%2FTwitter.png&f=1&nofb=1" alt=""></a>
-        </div>
     </footer>
 </html>
