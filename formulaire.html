@@ -30,14 +30,23 @@
                         <div class="block-form block-pro">
 
                         <div class="group">
-                            <label>
-                                <input type="text" class="input" placeholder="Nom du site préféré">
-                            </label>
-                        </div>
-                        <div class="group">
-                            <label>
-                                <input  type="text" class="input" placeholder="Nom du deuxième site préféré">
-                            </label>
+                            <label for="liste">Choose a pet:</label>
+
+                            <select name="liste" id="liste">
+                                <option value="">--Please choose an option--</option>
+                                <option value="Ennuitorium">Ennuitorium</option>
+                                <option value="VDM">VDM</option>
+                                <option value="Savoir inutile">Savoir inutile</option>
+                                <option value="Chuck Norris facts">Chuck Norris facts</option>
+                                <option value="Akinator">Akinator</option>
+                                <option value="Oui ou Non">Oui ou Non</option>
+                                <option value="Wikihow">Wikihow</option>
+                                <option value="Find the invisible cow">Find the invisible cow</option>
+                                <option value="Koala to the max">Koala to the max</option>
+                                <option value="Always judge a book by its cover">Always judge a book by its cover</option>
+                                <option value="The useless web">The useless web</option>
+                                <option value="Do nothing for 2 minuts">Do nothing for 2 minuts</option>
+                            </select>
                         </div>
                         <div class="group">
                             <label>
@@ -46,7 +55,7 @@
                         </div>
                         <div class="group">
                             <label>
-                                <input  type="number" class="input" placeholder="temps moyen passé à s'ennuyer par jours en minutes">
+                                <input  type="number" class="input" placeholder="temps passé à s'ennuyer par jour en heures">
                             </label>
                         </div>
                         <div class="group">
@@ -59,17 +68,17 @@
         </div>
         <br><br>
         <div class = "aff">
-            <table>
-                <tr>
-                    <th>Nom</th>
-                    <th>Email</th>
-                </tr>
-                <div class="login-form">
-                    <section>
-                        <input type="submit" class="button uppercase" onclick= "suppr()" value="Tout supprimer">
-                    </section>
-                </div>
-            </table>
+            <div class="login-form">
+                <table>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Email</th>
+                    </tr>
+                </table>
+                <section>
+                    <input type="submit" class="button uppercase" onclick= "suppr()" value="Tout supprimer">
+                </section>
+            </div>
         </div>
     <style>
             html{
@@ -144,7 +153,6 @@
                 transition:all .4s linear;
             }
             .login-form{
-                min-height:345px;
                 position:relative;
                 perspective:1000px;
                 transform-style:preserve-3d;
@@ -159,6 +167,7 @@
                 border-radius:10px;
                 background:rgba(255,255,255,0.2);
                 font-size: 16px;
+                border-bottom: 2px solid rgb(5, 18, 82);
             }
             .login-form .group{
                 margin-bottom:32px;
@@ -190,55 +199,16 @@
                 min-height:200px;
                 background:linear-gradient(rgba(250,250,250,.7),rgba(242,228,183,.7 ));
             }
+            table{
+                border-spacing: 6px;
+
+            }
+            th, td{
+                border-collapse: collapse;
+                padding: 10px;
+                border-bottom: 2px solid rgb(5, 18, 82);
+            }
         </style>
-            <script type="application/javascript">
-            function ajouter() {
-                const testForm = document.App;
-                console.log("la variable Nom");
-                console.log(testForm.nom.value);
-                let utilisateur = [
-                    {
-                        nom: testForm.nom.value,
-                        email: testForm.mail.value,
-                    },
-                ];
-                let table = document.querySelector("#utilisateur");
-                if (testForm.nom.value && testForm.mail.value) {
-                    generateTable(table, utilisateur);
-                }
-            }
-            function generateTable(table, data) {
-                for (let element of data) {
-                    let row = table.insertRow();
-                    for (const key in element) {
-                        let cell = row.insertCell();
-                        let text = document.createTextNode(element[key]);
-                        cell.appendChild(text);
-                    }
-                }
-            }
-            function suppr() {
-                const myTable = document.getElementById("utilisateur");
-                const rowCount = myTable.rows.length;
-                for (let x = rowCount - 1; x > 0; x--) {
-                    myTable.deleteRow(x);
-                }
-            }
-            let clickedUser = true;
-            function ShowUser() {
-                if(clickedUser === true) {
-                    document.getElementById("btn1").style.backgroundColor = "white"
-                    document.getElementById("btn1").style.borderColor = "red"
-                    document.getElementById("btn2").style.backgroundColor = "lightcoral"
-                    document.getElementById("btn2").style.borderColor = "lightcoral"
-                    document.getElementById("taches").className = "invisible";
-                    document.getElementById("U").className = "h1";
-                    document.getElementById("utilisateur").className = "formulaire";
-                    clickedTask = true;
-                    clickedUser = false
-                }
-            }
-        </script>
     </body>
     <footer>
         <div>
